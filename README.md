@@ -31,7 +31,7 @@ To this:
 ```
 
 This gem was inspired by [this
-post](http://quickleft.com/blog/drying-your-views-with-dsl-s?utm_source=rubyweekly&utm_medium=email)
+post](http://quickleft.com/blog/drying-your-views-with-dsl-s)
 by Ben West in the Quick Left blog. Thank you! <3
 
 ## Installation
