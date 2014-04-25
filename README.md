@@ -49,6 +49,13 @@ And then execute:
 *TODO: add some content here! Meanwhile, check the introduction of the README
 file.*
 
+## TODO
+
+* Add tests & docs (sorry!)
+* Add more displayers
+* Add more content to this README file
+* Let users use custom displayers
+
 ## Contributing
 
 1. Fork it
