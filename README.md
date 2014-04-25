@@ -9,12 +9,12 @@ attribute and methods, so you can move from this:
 <dl>
   <% if @book.title.present? %>
     <dt>Title</dt>
-    <dd><%= @example.title %></dd>
+    <dd><%= @book.title %></dd>
   <% end %>
 
-  <% if @example.price.present? %>
+  <% if @book.price.present? %>
     <dt>Price</dt>
-    <dd><%= number_with_currency @example.price %></dd>
+    <dd><%= number_with_currency @book.price %></dd>
   <% end %>
 </dl>
 ```
@@ -22,7 +22,7 @@ attribute and methods, so you can move from this:
 To this:
 
 ```erb
-<%= display_for @example do |d| %>
+<%= display_for @book do |d| %>
   <dl>
     <%= d.display :title %>
     <%= d.currency :price %>
@@ -43,6 +43,10 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
+
+Or install it with:
+
+    $ gem install simple_display --pre
 
 ## Usage
 
