@@ -50,15 +50,38 @@ Or install it with:
 
 ## Usage
 
-*TODO: add some content here! Meanwhile, check the introduction of the README
-file.*
+Simply install `simple_display` and start using it:
+
+```erb
+<%= display_for @book do |d| %>
+  <dl>
+    <%= d.display :title %>
+    <%= d.currency :price %>
+  </dl>
+<% end %>
+```
+
+### Custom displayers
+
+You can use custom displayers. Create an `app/displayers` folder in your Rails
+app and add your displayers there. For instance, if you want to create an
+displayer that parses a text as markdown and outputs it as HTML using the
+`Kramdown` gem, you could do this:
+
+```ruby
+# app/displayers/markdown_displayer.rb
+class MarkdownDisplayer < SimpleDisplay::Displayers:Base
+  def display_value(field_value, &block)
+    Kramdown::Document.new(field_value).to_html.html_safe
+  end
+end
+```
 
 ## TODO
 
 * Add tests & docs (sorry!)
 * Add more displayers
 * Add more content to this README file
-* Let users use custom displayers
 
 ## Contributing
 

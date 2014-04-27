@@ -14,9 +14,9 @@ module SimpleDisplay
     end
 
     def method_missing(method, *args, &block)
-      klass = "simple_display/displayers/#{method}_displayer".camelize
-      if Module.const_get(klass).is_a?(Class)
-        klass = klass.constantize
+      klass = "#{method}_displayer".camelize
+      klass = SimpleDisplay::Displayers.const_get(klass)
+      if klass.is_a?(Class)
         klass.new(model, helper).display(*args, &block)
       else
         super
@@ -24,8 +24,8 @@ module SimpleDisplay
     end
 
     def respond_to?(method, *args, &block)
-      klass = "simple_display/displayers/#{method}_displayer".camelize
-      Module.const_get(klass).is_a?(Class) || super
+      klass = "#{method}_displayer".camelize
+      klass = SimpleDisplay::Displayers.const_get(klass).is_a?(Class) || super
     end
   end
 end
