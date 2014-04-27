@@ -17,7 +17,7 @@ module SimpleDisplay
       klass = "simple_display/displayers/#{method}_displayer".camelize
       if Module.const_get(klass).is_a?(Class)
         klass = klass.constantize
-        klass.new(model, helper).display(*args)
+        klass.new(model, helper).display(*args, &block)
       else
         super
       end

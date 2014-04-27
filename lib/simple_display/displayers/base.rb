@@ -11,20 +11,24 @@ module SimpleDisplay
       def display(field, label = nil, &block)
         field_value = model.send(field)
         if field_value.present?
-          content = value(field_value, &block)
+          content = display_value(field_value, &block)
 
-          line(disp_label(field, label), content.to_s)
+          line(display_label(field, label), content.to_s)
         end
       end
 
       private
+
+      def display_value(field_value, &block)
+        value(field_value, &block)
+      end
 
       def value(field_value, &block)
         return helper.capture(field_value, &block) if block_given?
         field_value
       end
 
-      def disp_label(field, label)
+      def display_label(field, label)
         label || model.class.human_attribute_name(field)
       end
 
