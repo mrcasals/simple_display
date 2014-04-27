@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = SimpleDisplay::VERSION
   spec.authors       = ["Marc Riera"]
   spec.email         = ["mrc2407@gmail.com"]
-  spec.description   = %q{Write a gem description}
-  spec.summary       = %q{Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Display your Rails models easily}
+  spec.summary       = %q{Display your Rails models easily}
+  spec.homepage      = "https://github.com/mrcasals/simple_display"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
