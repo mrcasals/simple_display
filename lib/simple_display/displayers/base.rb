@@ -9,7 +9,7 @@ module SimpleDisplay
       end
 
       def display(field, label = nil, &block)
-        field_value = model.send(field)
+        field_value = model.public_send(field)
         if field_value.present?
           content = display_value(field_value, &block)
 
