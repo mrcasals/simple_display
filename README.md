@@ -70,14 +70,14 @@ displayer that parses a text as markdown and outputs it as HTML using the
 
 ```ruby
 # app/displayers/markdown_displayer.rb
-class MarkdownDisplayer < SimpleDisplay::Displayers:Base
+class MarkdownDisplayer < SimpleDisplay::Displayers::Base
   def display_value(field_value, &block)
     Kramdown::Document.new(field_value).to_html.html_safe
   end
 end
 ```
 
-Then you can use it in your Rails veiws:
+Then you can use it in your Rails views:
 
 ```erb
 <%= display_for @book do |d| %>
