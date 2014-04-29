@@ -77,11 +77,23 @@ class MarkdownDisplayer < SimpleDisplay::Displayers:Base
 end
 ```
 
+Then you can use it in your Rails veiws:
+
+```erb
+<%= display_for @book do |d| %>
+  <dl>
+    <%= d.display :title %>
+    <%= d.currency :price %>
+    <%= d.markdown :description %>
+  </dl>
+<% end %>
+```
+
+
 ## TODO
 
 * Add tests & docs (sorry!)
 * Add more displayers
-* Add more content to this README file
 
 ## Contributing
 
