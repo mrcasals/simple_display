@@ -32,7 +32,7 @@ To this:
 
 This gem was inspired by [this
 post](http://quickleft.com/blog/drying-your-views-with-dsl-s)
-by Ben West in the Quick Left blog. Thank you! <3
+by [Ben West](http://github.com/mrgenixus) in the Quick Left blog. Thank you! <3
 
 ## Installation
 
